@@ -1,0 +1,28 @@
+{
+  "name": "messagecounter",
+  "version": "1.0.0",
+  "description": "Discord bot to count number of messages sent by a user",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShreyaPillai/MessageCounter.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "message",
+    "count"
+  ],
+  "author": "ShreyaPillai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShreyaPillai/MessageCounter/issues"
+  },
+  "homepage": "https://github.com/ShreyaPillai/MessageCounter#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
+}
