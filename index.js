@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 var guilds = require('./guilds.json');
+const config = require('./config.json');
+
 
 
 
@@ -29,7 +31,7 @@ client.on('message', message => {
         
     }
     if(message.content == '!reset'){
-        guilds[message.author.id + message.guild.id] = { messageCount: 0, name: message.author.username, server: message.guild.id};
+        guilds[message.author.id + message.guild.id] = { messageCount: 0, name: message.guild.member(message.author).displayName, server: message.guild.id};
         message.reply('Your message count has been reset Successfully!' ); 
     }
 
@@ -38,7 +40,7 @@ client.on('message', message => {
 
        var user = Object.keys(guilds).map(key => {
         return guilds[key];})
-        
+
         for(var i in user){
         if(user[i].server ==  message.guild.id){
           output.push(user[i]);
@@ -66,7 +68,7 @@ client.on('message', message => {
 
         // Write the data back to the JSON file, logging any errors to the console.
         try {
-          fs.writeFileSync('./guilds.json', JSON.stringify(guilds)); // Again, path may vary.
+          fs.writeFileSync('./guilds.json', JSON.stringify(guilds)); 
         } catch(err) {
           console.error(err);
         }
@@ -74,4 +76,4 @@ client.on('message', message => {
 
     });
 
-client.login('ODI4NjI4NjU0NDA5OTA4MjI0.YGsWkg.75kGX0w32x9ZwWh6X0BlOKwqhAk');
+client.login(config.token);
