@@ -1,1 +1,1 @@
-# Discord bot to count number of messages sent
+# Discord bot that counts number of messages sent by a member and according decides the leaderboard
